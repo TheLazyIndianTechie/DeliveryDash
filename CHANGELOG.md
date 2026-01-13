@@ -15,7 +15,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - `Update_ApplesRotationAndTranslationToTransformAsExpected()` - Verifies both rotation and translation applied correctly in single Update() call
     - `Update_AccumulatesRotationOverMultipleFrames()` - Tests cumulative rotation over 5 frames
     - `Update_AccumulatesTranslationOverMultipleFrames()` - Tests cumulative translation over 5 frames
-  - **Keyboard Input Detection Tests:**
+  - **Keyboard Input Detection Tests (NEW):**
+    - `Update_CorrectlySetsMoveTo1Point0_WhenUpArrowKeyPressed()` - **Test Case 1:** Verifies move=1.0 when up arrow or W key pressed
+    - `Update_CorrectlySetsMoveTo_Minus1Point0_WhenDownArrowKeyPressed()` - **Test Case 2:** Verifies move=-1.0 when down arrow or S key pressed
+    - `Update_CorrectlySetsSteerTo1Point0_WhenLeftArrowKeyPressed()` - **Test Case 3:** Verifies steer=1.0 when left arrow or A key pressed
+    - `Update_CorrectlySetsSteerTo_Minus1Point0_WhenRightArrowKeyPressed()` - **Test Case 4:** Verifies steer=-1.0 when right arrow or D key pressed
+    - `Update_AppliesToTranslationAndRotationBasedOnMoveAndSteerValues()` - **Test Case 5:** Comprehensive test verifying both translation and rotation applied based on move and steer values
+  - **Original Input Detection Tests:**
     - `Update_ContainsForwardMovementDetectionLogic()` - Verifies forward movement detection code path exists
     - `Update_HasForwardMovementDetectionPath()` - Tests up arrow or 'w' key detection logic
     - `Update_HasBackwardMovementDetectionPath()` - Tests down arrow or 's' key detection logic

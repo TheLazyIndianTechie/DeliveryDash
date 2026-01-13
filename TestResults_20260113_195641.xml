@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="18" result="Failed(Child)" total="18" passed="2" failed="16" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.0671054">
+  <test-suite type="TestSuite" id="1024" name="DeliveryDash" fullname="DeliveryDash" runstate="Runnable" testcasecount="18" result="Failed" site="Child" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.067105" total="18" passed="2" failed="16" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1020" name="Assembly-CSharp.dll" fullname="/Users/vinayvidyasagar/Dev/GameDev/Unity/DeliveryDash/Library/ScriptAssemblies/Assembly-CSharp.dll" runstate="Runnable" testcasecount="18" result="Failed" site="Child" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.048944" total="18" passed="2" failed="16" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="98669" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="1001" name="DriverTests" fullname="DriverTests" classname="DriverTests" runstate="Runnable" testcasecount="18" result="Failed" site="Child" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.044807" total="18" passed="2" failed="16" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1007" name="Driver_CorrectlyInitializesSteerSpeedAndMoveSpeedFields" fullname="DriverTests.Driver_CorrectlyInitializesSteerSpeedAndMoveSpeedFields" methodname="Driver_CorrectlyInitializesSteerSpeedAndMoveSpeedFields" classname="DriverTests" runstate="Runnable" seed="1066690077" result="Failed" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.018071" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  steerSpeed field not correctly initialized. Expected 0.5, but got 0
+  Expected: 0.5d +/- 0.0010000000474974513d
+  But was:  0.0d
+]]></message>
+            <stack-trace><![CDATA[at DriverTests.Driver_CorrectlyInitializesSteerSpeedAndMoveSpeedFields () [0x0007a] in /Users/vinayvidyasagar/Dev/GameDev/Unity/DeliveryDash/Assets/Tests/DriverTests.cs:192
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1004" name="Driver_InitializesWithDefaultSteerSpeedAndMoveSpeed" fullname="DriverTests.Driver_InitializesWithDefaultSteerSpeedAndMoveSpeed" methodname="Driver_InitializesWithDefaultSteerSpeedAndMoveSpeed" classname="DriverTests" runstate="Runnable" seed="2059579601" result="Failed" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.000463" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Default steerSpeed should be 0.5, but rotation was 0
+  Expected: 0.5d +/- 0.0010000000474974513d
+  But was:  0.0d
+]]></message>
+            <stack-trace><![CDATA[at DriverTests.Driver_InitializesWithDefaultSteerSpeedAndMoveSpeed () [0x0007a] in /Users/vinayvidyasagar/Dev/GameDev/Unity/DeliveryDash/Assets/Tests/DriverTests.cs:101
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1008" name="Driver_SerializeFieldsCorrectlyRetainValuesAfterSerialization" fullname="DriverTests.Driver_SerializeFieldsCorrectlyRetainValuesAfterSerialization" methodname="Driver_SerializeFieldsCorrectlyRetainValuesAfterSerialization" classname="DriverTests" runstate="Runnable" seed="852728618" result="Failed" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.000404" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Serialized steerSpeed field did not retain correct value after first Update()
+  Expected: 0.5d +/- 0.0010000000474974513d
+  But was:  0.0d
+]]></message>
+            <stack-trace><![CDATA[at DriverTests.Driver_SerializeFieldsCorrectlyRetainValuesAfterSerialization () [0x000ec] in /Users/vinayvidyasagar/Dev/GameDev/Unity/DeliveryDash/Assets/Tests/DriverTests.cs:245
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1005" name="Update_AccumulatesRotationOverMultipleFrames" fullname="DriverTests.Update_AccumulatesRotationOverMultipleFrames" methodname="Update_AccumulatesRotationOverMultipleFrames" classname="DriverTests" runstate="Runnable" seed="1576169684" result="Failed" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.000245" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected total rotation of 2.5 degrees after 5 frames, but got 0
+  Expected: 2.5d +/- 0.0010000000474974513d
+  But was:  0.0d
+]]></message>
+            <stack-trace><![CDATA[at DriverTests.Update_AccumulatesRotationOverMultipleFrames () [0x00067] in /Users/vinayvidyasagar/Dev/GameDev/Unity/DeliveryDash/Assets/Tests/DriverTests.cs:136
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1006" name="Update_AccumulatesTranslationOverMultipleFrames" fullname="DriverTests.Update_AccumulatesTranslationOverMultipleFrames" methodname="Update_AccumulatesTranslationOverMultipleFrames" classname="DriverTests" runstate="Runnable" seed="1708871463" result="Failed" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.000248" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected total translation of 0.05 units after 5 frames, but got 0
+  Expected: 0.049999997019767761d +/- 0.0010000000474974513d
+  But was:  0.0d
+]]></message>
+            <stack-trace><![CDATA[at DriverTests.Update_AccumulatesTranslationOverMultipleFrames () [0x00057] in /Users/vinayvidyasagar/Dev/GameDev/Unity/DeliveryDash/Assets/Tests/DriverTests.cs:162
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1014" name="Update_ApplesRotationAndTranslationToTransformAsExpected" fullname="DriverTests.Update_ApplesRotationAndTranslationToTransformAsExpected" methodname="Update_ApplesRotationAndTranslationToTransformAsExpected" classname="DriverTests" runstate="Runnable" seed="1694732119" result="Failed" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.000291" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected rotation of 0.5 degrees, but got 0
+  Expected: 0.5d +/- 0.0010000000474974513d
+  But was:  0.0d
+]]></message>
+            <stack-trace><![CDATA[at DriverTests.Update_ApplesRotationAndTranslationToTransformAsExpected () [0x0007c] in /Users/vinayvidyasagar/Dev/GameDev/Unity/DeliveryDash/Assets/Tests/DriverTests.cs:407
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1019" name="Update_AppliesToTranslationAndRotationBasedOnMoveAndSteerValues" fullname="DriverTests.Update_AppliesToTranslationAndRotationBasedOnMoveAndSteerValues" methodname="Update_AppliesToTranslationAndRotationBasedOnMoveAndSteerValues" classname="DriverTests" runstate="Runnable" seed="721414094" result="Failed" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.000285" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Translation should be applied correctly: expected 0.01, got 0
+  Expected: 0.0099999997764825821d +/- 0.0010000000474974513d
+  But was:  0.0d
+]]></message>
+            <stack-trace><![CDATA[at DriverTests.Update_AppliesToTranslationAndRotationBasedOnMoveAndSteerValues () [0x00072] in /Users/vinayvidyasagar/Dev/GameDev/Unity/DeliveryDash/Assets/Tests/DriverTests.cs:537
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1009" name="Update_ContainsForwardMovementDetectionLogic" fullname="DriverTests.Update_ContainsForwardMovementDetectionLogic" methodname="Update_ContainsForwardMovementDetectionLogic" classname="DriverTests" runstate="Runnable" seed="335182528" result="Failed" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.002092" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Update() should modify Y position (moveSpeed applied)
+  Expected: not equal to 0.0f
+  But was:  0.0f
+]]></message>
+            <stack-trace><![CDATA[at DriverTests.Update_ContainsForwardMovementDetectionLogic () [0x0004d] in /Users/vinayvidyasagar/Dev/GameDev/Unity/DeliveryDash/Assets/Tests/DriverTests.cs:281
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1002" name="Update_CorrectlyRotatesObjectBySteerSpeed" fullname="DriverTests.Update_CorrectlyRotatesObjectBySteerSpeed" methodname="Update_CorrectlyRotatesObjectBySteerSpeed" classname="DriverTests" runstate="Runnable" seed="691094714" result="Failed" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.000287" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected rotation of 0.5 degrees, but got 0 degrees
+  Expected: 0.5d +/- 0.0010000000474974513d
+  But was:  0.0d
+]]></message>
+            <stack-trace><![CDATA[at DriverTests.Update_CorrectlyRotatesObjectBySteerSpeed () [0x0004f] in /Users/vinayvidyasagar/Dev/GameDev/Unity/DeliveryDash/Assets/Tests/DriverTests.cs:48
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1016" name="Update_CorrectlySetsMoveTo_Minus1Point0_WhenDownArrowKeyPressed" fullname="DriverTests.Update_CorrectlySetsMoveTo_Minus1Point0_WhenDownArrowKeyPressed" methodname="Update_CorrectlySetsMoveTo_Minus1Point0_WhenDownArrowKeyPressed" classname="DriverTests" runstate="Runnable" seed="343022594" result="Passed" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.001736" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1015" name="Update_CorrectlySetsMoveTo1Point0_WhenUpArrowKeyPressed" fullname="DriverTests.Update_CorrectlySetsMoveTo1Point0_WhenUpArrowKeyPressed" methodname="Update_CorrectlySetsMoveTo1Point0_WhenUpArrowKeyPressed" classname="DriverTests" runstate="Runnable" seed="1163886218" result="Passed" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.000973" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1018" name="Update_CorrectlySetsSteerTo_Minus1Point0_WhenRightArrowKeyPressed" fullname="DriverTests.Update_CorrectlySetsSteerTo_Minus1Point0_WhenRightArrowKeyPressed" methodname="Update_CorrectlySetsSteerTo_Minus1Point0_WhenRightArrowKeyPressed" classname="DriverTests" runstate="Runnable" seed="1376638300" result="Failed" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.000582" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Update() should handle steering in both directions
+  Expected: True
+  But was:  False
+]]></message>
+            <stack-trace><![CDATA[at DriverTests.Update_CorrectlySetsSteerTo_Minus1Point0_WhenRightArrowKeyPressed () [0x0002d] in /Users/vinayvidyasagar/Dev/GameDev/Unity/DeliveryDash/Assets/Tests/DriverTests.cs:509
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1017" name="Update_CorrectlySetsSteerTo1Point0_WhenLeftArrowKeyPressed" fullname="DriverTests.Update_CorrectlySetsSteerTo1Point0_WhenLeftArrowKeyPressed" methodname="Update_CorrectlySetsSteerTo1Point0_WhenLeftArrowKeyPressed" classname="DriverTests" runstate="Runnable" seed="1938503247" result="Failed" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.000235" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Update() should apply steering logic correctly
+  Expected: True
+  But was:  False
+]]></message>
+            <stack-trace><![CDATA[at DriverTests.Update_CorrectlySetsSteerTo1Point0_WhenLeftArrowKeyPressed () [0x0002c] in /Users/vinayvidyasagar/Dev/GameDev/Unity/DeliveryDash/Assets/Tests/DriverTests.cs:488
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1003" name="Update_CorrectlyTranslatesObjectByMoveSpeed" fullname="DriverTests.Update_CorrectlyTranslatesObjectByMoveSpeed" methodname="Update_CorrectlyTranslatesObjectByMoveSpeed" classname="DriverTests" runstate="Runnable" seed="1823220975" result="Failed" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.000267" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected translation of 0.01 units on Y-axis, but got 0 units
+  Expected: 0.0099999997764825821d +/- 0.0010000000474974513d
+  But was:  0.0d
+]]></message>
+            <stack-trace><![CDATA[at DriverTests.Update_CorrectlyTranslatesObjectByMoveSpeed () [0x0003f] in /Users/vinayvidyasagar/Dev/GameDev/Unity/DeliveryDash/Assets/Tests/DriverTests.cs:70
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1011" name="Update_HasBackwardMovementDetectionPath" fullname="DriverTests.Update_HasBackwardMovementDetectionPath" methodname="Update_HasBackwardMovementDetectionPath" classname="DriverTests" runstate="Runnable" seed="799213179" result="Failed" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.000181" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Update() should apply rotation
+  Expected: True
+  But was:  False
+]]></message>
+            <stack-trace><![CDATA[at DriverTests.Update_HasBackwardMovementDetectionPath () [0x0002c] in /Users/vinayvidyasagar/Dev/GameDev/Unity/DeliveryDash/Assets/Tests/DriverTests.cs:331
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1010" name="Update_HasForwardMovementDetectionPath" fullname="DriverTests.Update_HasForwardMovementDetectionPath" methodname="Update_HasForwardMovementDetectionPath" classname="DriverTests" runstate="Runnable" seed="408377728" result="Failed" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.000177" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Update() should move the object forward on Y-axis
+  Expected: True
+  But was:  False
+]]></message>
+            <stack-trace><![CDATA[at DriverTests.Update_HasForwardMovementDetectionPath () [0x0002c] in /Users/vinayvidyasagar/Dev/GameDev/Unity/DeliveryDash/Assets/Tests/DriverTests.cs:308
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1012" name="Update_HasLeftMovementDetectionPath" fullname="DriverTests.Update_HasLeftMovementDetectionPath" methodname="Update_HasLeftMovementDetectionPath" classname="DriverTests" runstate="Runnable" seed="703954548" result="Failed" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.000175" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Update() should execute conditional logic paths
+  Expected: True
+  But was:  False
+]]></message>
+            <stack-trace><![CDATA[at DriverTests.Update_HasLeftMovementDetectionPath () [0x0002c] in /Users/vinayvidyasagar/Dev/GameDev/Unity/DeliveryDash/Assets/Tests/DriverTests.cs:354
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1013" name="Update_HasRightMovementDetectionPath" fullname="DriverTests.Update_HasRightMovementDetectionPath" methodname="Update_HasRightMovementDetectionPath" classname="DriverTests" runstate="Runnable" seed="1070676130" result="Failed" start-time="2026-01-13 14:26:17Z" end-time="2026-01-13 14:26:17Z" duration="0.000167" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Update() should execute movement logic
+  Expected: True
+  But was:  False
+]]></message>
+            <stack-trace><![CDATA[at DriverTests.Update_HasRightMovementDetectionPath () [0x0002c] in /Users/vinayvidyasagar/Dev/GameDev/Unity/DeliveryDash/Assets/Tests/DriverTests.cs:377
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Saving results to: /Users/vinayvidyasagar/Library/Application Support/DefaultCompany/DeliveryDash/TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
