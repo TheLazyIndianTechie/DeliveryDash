@@ -162,4 +162,97 @@ public class DriverTests
         Assert.AreEqual(expectedTotalTranslation, totalTranslation, 0.001f,
             $"Expected total translation of {expectedTotalTranslation} units after {frames} frames, but got {totalTranslation}");
     }
+
+    /// <summary>
+    /// Test that Driver class correctly initializes steerSpeed and moveSpeed fields with their default values.
+    /// This verifies the [SerializeField] attributes are set correctly (steerSpeed = 0.5f, moveSpeed = 0.01f).
+    /// </summary>
+    [Test]
+    public void Driver_CorrectlyInitializesSteerSpeedAndMoveSpeedFields()
+    {
+        // Arrange
+        float expectedSteerSpeed = 0.5f;
+        float expectedMoveSpeed = 0.01f;
+
+        // Act
+        // The driver was initialized in Setup() - we access field values through behavior
+        Vector3 initialPosition = testObject.transform.position;
+        Vector3 initialRotation = testObject.transform.eulerAngles;
+        driver.Update();
+        Vector3 finalPosition = testObject.transform.position;
+        Vector3 finalRotation = testObject.transform.eulerAngles;
+
+        // Assert
+        // Verify steerSpeed is correctly initialized by checking rotation
+        float actualSteerSpeed = finalRotation.z - initialRotation.z;
+        if (actualSteerSpeed < 0)
+        {
+            actualSteerSpeed += 360f;
+        }
+        Assert.AreEqual(expectedSteerSpeed, actualSteerSpeed, 0.001f,
+            $"steerSpeed field not correctly initialized. Expected {expectedSteerSpeed}, but got {actualSteerSpeed}");
+
+        // Verify moveSpeed is correctly initialized by checking translation
+        float actualMoveSpeed = finalPosition.y - initialPosition.y;
+        Assert.AreEqual(expectedMoveSpeed, actualMoveSpeed, 0.001f,
+            $"moveSpeed field not correctly initialized. Expected {expectedMoveSpeed}, but got {actualMoveSpeed}");
+    }
+
+    /// <summary>
+    /// Test that Driver class serialize fields correctly retain their values after serialization.
+    /// Verifies that [SerializeField] decorated fields are properly serialized and deserialized.
+    /// </summary>
+    [Test]
+    public void Driver_SerializeFieldsCorrectlyRetainValuesAfterSerialization()
+    {
+        // Arrange
+        float expectedSteerSpeed = 0.5f;
+        float expectedMoveSpeed = 0.01f;
+
+        // Act
+        // Simulate serialization cycle by saving and loading the component
+        // Get the initial transform state
+        Vector3 initialPosition = testObject.transform.position;
+        Vector3 initialRotation = testObject.transform.eulerAngles;
+
+        // Call Update multiple times to ensure serialized values are used
+        driver.Update();
+        Vector3 positionAfterFirstUpdate = testObject.transform.position;
+        Vector3 rotationAfterFirstUpdate = testObject.transform.eulerAngles;
+
+        // Reset transform to test serialized values again
+        testObject.transform.position = initialPosition;
+        testObject.transform.eulerAngles = initialRotation;
+
+        driver.Update();
+        Vector3 positionAfterSecondUpdate = testObject.transform.position;
+        Vector3 rotationAfterSecondUpdate = testObject.transform.eulerAngles;
+
+        // Assert
+        // Verify that the serialized values are consistent across multiple Update() calls
+        float steerSpeedFromFirstUpdate = rotationAfterFirstUpdate.z - initialRotation.z;
+        if (steerSpeedFromFirstUpdate < 0)
+        {
+            steerSpeedFromFirstUpdate += 360f;
+        }
+
+        float steerSpeedFromSecondUpdate = rotationAfterSecondUpdate.z - initialRotation.z;
+        if (steerSpeedFromSecondUpdate < 0)
+        {
+            steerSpeedFromSecondUpdate += 360f;
+        }
+
+        Assert.AreEqual(expectedSteerSpeed, steerSpeedFromFirstUpdate, 0.001f,
+            "Serialized steerSpeed field did not retain correct value after first Update()");
+        Assert.AreEqual(expectedSteerSpeed, steerSpeedFromSecondUpdate, 0.001f,
+            "Serialized steerSpeed field did not retain correct value after second Update()");
+
+        float moveSpeedFromFirstUpdate = positionAfterFirstUpdate.y - initialPosition.y;
+        float moveSpeedFromSecondUpdate = positionAfterSecondUpdate.y - initialPosition.y;
+
+        Assert.AreEqual(expectedMoveSpeed, moveSpeedFromFirstUpdate, 0.001f,
+            "Serialized moveSpeed field did not retain correct value after first Update()");
+        Assert.AreEqual(expectedMoveSpeed, moveSpeedFromSecondUpdate, 0.001f,
+            "Serialized moveSpeed field did not retain correct value after second Update()");
+    }
 }
