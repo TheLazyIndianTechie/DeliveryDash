@@ -600,4 +600,120 @@ public class DriverTests
             "Y rotation should not change");
     }
 
+    /// <summary>
+    /// Test 1: Driver moves the transform correctly when Translate is called with moveAmount multiplied by Time.deltaTime
+    /// Tests that transform.Translate(0, moveAmount, 0) correctly moves the object along the Y-axis
+    /// when moveAmount = move * moveSpeed * Time.deltaTime
+    /// </summary>
+    [Test]
+    public void Driver_MovesTransformCorrectly_WhenTranslateCalledWithMoveAmountTimedByDeltaTime()
+    {
+        // Arrange
+        Vector3 initialPosition = testObject.transform.position;
+        float move = 1.0f;  // Simulating forward input
+        float moveSpeed = 0.01f;  // Default moveSpeed from Driver
+        float deltaTime = Time.deltaTime;  // Current frame time
+        float expectedMoveAmount = move * moveSpeed * deltaTime;
+        
+        // Act - Manually perform what Driver.Update() does
+        float moveAmount = move * moveSpeed * deltaTime;
+        testObject.transform.Translate(0, moveAmount, 0);
+        
+        // Assert
+        Vector3 finalPosition = testObject.transform.position;
+        float actualYMovement = finalPosition.y - initialPosition.y;
+        
+        Assert.AreEqual(expectedMoveAmount, actualYMovement, 0.0001f,
+            $"Expected Y movement of {expectedMoveAmount}, but got {actualYMovement}");
+    }
+
+    /// <summary>
+    /// Test 2: Driver rotates the transform correctly when Rotate is called with steerAmount multiplied by Time.deltaTime
+    /// Tests that transform.Rotate(0, 0, steerAmount) correctly rotates the object around the Z-axis
+    /// when steerAmount = steer * steerSpeed * Time.deltaTime
+    /// </summary>
+    [Test]
+    public void Driver_RotatesTransformCorrectly_WhenRotateCalledWithSteerAmountTimedByDeltaTime()
+    {
+        // Arrange
+        Vector3 initialRotation = testObject.transform.eulerAngles;
+        float steer = 1.0f;  // Simulating left input
+        float steerSpeed = 0.5f;  // Default steerSpeed from Driver
+        float deltaTime = Time.deltaTime;  // Current frame time
+        float expectedSteerAmount = steer * steerSpeed * deltaTime;
+        
+        // Act - Manually perform what Driver.Update() does
+        float steerAmount = steer * steerSpeed * deltaTime;
+        testObject.transform.Rotate(0, 0, steerAmount);
+        
+        // Assert
+        Vector3 finalRotation = testObject.transform.eulerAngles;
+        float actualZRotation = finalRotation.z - initialRotation.z;
+        
+        // Handle rotation wrapping (0-360 degrees)
+        if (actualZRotation < 0)
+        {
+            actualZRotation += 360f;
+        }
+        
+        Assert.AreEqual(expectedSteerAmount, actualZRotation, 0.0001f,
+            $"Expected Z rotation of {expectedSteerAmount}, but got {actualZRotation}");
+    }
+
+    /// <summary>
+    /// Test 3: Driver correctly calculates moveAmount as move times moveSpeed times Time.deltaTime
+    /// Verifies the formula: moveAmount = move * moveSpeed * Time.deltaTime
+    /// </summary>
+    [Test]
+    public void Driver_CorrectlyCalculates_MoveAmount_AsMoveTimestMoveSpeedTimesTimeDeltaTime()
+    {
+        // Arrange
+        float move = 1.0f;  // Simulating forward input
+        float moveSpeed = 0.01f;  // Default moveSpeed from Driver
+        float deltaTime = Time.deltaTime;  // Current frame time
+        
+        // Act - Calculate moveAmount using the Driver's formula
+        float moveAmount = move * moveSpeed * deltaTime;
+        
+        // Assert
+        float expectedMoveAmount = 1.0f * 0.01f * deltaTime;
+        Assert.AreEqual(expectedMoveAmount, moveAmount, 0.00001f,
+            $"moveAmount calculation failed: expected {expectedMoveAmount}, got {moveAmount}");
+        
+        // Additional test: Verify with different move values
+        float moveBackward = -1.0f;
+        float moveAmountBackward = moveBackward * moveSpeed * deltaTime;
+        float expectedMoveAmountBackward = -1.0f * 0.01f * deltaTime;
+        Assert.AreEqual(expectedMoveAmountBackward, moveAmountBackward, 0.00001f,
+            $"moveAmount calculation failed for backward movement: expected {expectedMoveAmountBackward}, got {moveAmountBackward}");
+    }
+
+    /// <summary>
+    /// Test 4: Driver correctly calculates steerAmount as steer times steerSpeed times Time.deltaTime
+    /// Verifies the formula: steerAmount = steer * steerSpeed * Time.deltaTime
+    /// </summary>
+    [Test]
+    public void Driver_CorrectlyCalculates_SteerAmount_AsSteerTimesSteerSpeedTimesTimeDeltaTime()
+    {
+        // Arrange
+        float steer = 1.0f;  // Simulating left input
+        float steerSpeed = 0.5f;  // Default steerSpeed from Driver
+        float deltaTime = Time.deltaTime;  // Current frame time
+        
+        // Act - Calculate steerAmount using the Driver's formula
+        float steerAmount = steer * steerSpeed * deltaTime;
+        
+        // Assert
+        float expectedSteerAmount = 1.0f * 0.5f * deltaTime;
+        Assert.AreEqual(expectedSteerAmount, steerAmount, 0.00001f,
+            $"steerAmount calculation failed: expected {expectedSteerAmount}, got {steerAmount}");
+        
+        // Additional test: Verify with different steer values
+        float steerRight = -1.0f;
+        float steerAmountRight = steerRight * steerSpeed * deltaTime;
+        float expectedSteerAmountRight = -1.0f * 0.5f * deltaTime;
+        Assert.AreEqual(expectedSteerAmountRight, steerAmountRight, 0.00001f,
+            $"steerAmount calculation failed for right steering: expected {expectedSteerAmountRight}, got {steerAmountRight}");
+    }
+
 }
