@@ -9,7 +9,6 @@ public class Driver : MonoBehaviour
 
     public void Update()
     {
-       Debug.LogWarning(Time.deltaTime);
         float move = 0.0f;
         float steer = 0.0f;
 
