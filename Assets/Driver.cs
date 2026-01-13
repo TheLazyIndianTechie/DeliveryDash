@@ -11,7 +11,7 @@ public class Driver : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         transform.Rotate(0,0,steerSpeed);
         transform.Translate(0, moveSpeed, 0);
