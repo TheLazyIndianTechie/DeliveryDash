@@ -30,7 +30,6 @@ public class DriverTests
     {
         // Arrange
         Vector3 initialRotation = testObject.transform.eulerAngles;
-        float expectedSteerSpeed = 0.5f;
 
         // Act
         // In Edit Mode without keyboard input, steer=0.0, so no rotation occurs
@@ -61,7 +60,6 @@ public class DriverTests
     {
         // Arrange
         Vector3 initialPosition = testObject.transform.position;
-        float expectedMoveSpeed = 0.01f;
 
         // Act
         // In Edit Mode without keyboard input, move=0.0, so no translation occurs
@@ -87,8 +85,6 @@ public class DriverTests
         // Arrange
         Vector3 initialPosition = testObject.transform.position;
         Vector3 initialRotation = testObject.transform.eulerAngles;
-        float expectedSteerSpeed = 0.5f;
-        float expectedMoveSpeed = 0.01f;
 
         // Act
         // In Edit Mode without keyboard input, move=0.0 and steer=0.0
@@ -123,7 +119,6 @@ public class DriverTests
     {
         // Arrange
         Vector3 initialRotation = testObject.transform.eulerAngles;
-        float expectedSteerSpeed = 0.5f;
         int frames = 5;
 
         // Act
@@ -156,7 +151,6 @@ public class DriverTests
     {
         // Arrange
         Vector3 initialPosition = testObject.transform.position;
-        float expectedMoveSpeed = 0.01f;
         int frames = 5;
 
         // Act
@@ -185,8 +179,6 @@ public class DriverTests
     public void Driver_CorrectlyInitializesSteerSpeedAndMoveSpeedFields()
     {
         // Arrange
-        float expectedSteerSpeed = 0.5f;
-        float expectedMoveSpeed = 0.01f;
 
         // Act
         // The driver was initialized in Setup() - we access field values through behavior
@@ -222,8 +214,6 @@ public class DriverTests
     public void Driver_SerializeFieldsCorrectlyRetainValuesAfterSerialization()
     {
         // Arrange
-        float expectedSteerSpeed = 0.5f;
-        float expectedMoveSpeed = 0.01f;
 
         // Act
         // Simulate serialization cycle by saving and loading the component
@@ -421,8 +411,6 @@ public class DriverTests
         // Arrange
         Vector3 initialPosition = testObject.transform.position;
         Vector3 initialRotation = testObject.transform.eulerAngles;
-        float expectedSteerSpeed = 0.5f;
-        float expectedMoveSpeed = 0.01f;
 
         // Act
         // In Edit Mode without keyboard input, move=0.0 and steer=0.0
@@ -466,8 +454,6 @@ public class DriverTests
     {
         // Arrange
         Vector3 initialPosition = testObject.transform.position;
-        // Expected movement when move=1.0: moveSpeed * 1.0 = 0.01f
-        float expectedMovement = 0.01f;
 
         // Act
         // In Edit Mode without keyboard input: move defaults to 0.0
@@ -570,8 +556,6 @@ public class DriverTests
         // Arrange
         Vector3 initialPosition = testObject.transform.position;
         Vector3 initialRotation = testObject.transform.eulerAngles;
-        float moveSpeed = 0.01f;
-        float steerSpeed = 0.5f;
 
         // Act
         // In Edit Mode without keyboard input:
