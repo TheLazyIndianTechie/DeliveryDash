@@ -14,6 +14,7 @@ public class Delivery : MonoBehaviour
             {
                 Debug.Log("Package picked up");
                 _hasPackage = true;
+                GetComponent<ParticleSystem>().Play();
                 Destroy(other.gameObject, pickupDuration);
             }
             else if (_hasPackage)
@@ -25,7 +26,9 @@ public class Delivery : MonoBehaviour
         if (other.CompareTag("Customer") && _hasPackage)
         {
             Debug.Log("Package delivered");
+            GetComponent<ParticleSystem>().Stop();
             _hasPackage = false;
+            
         }
     }
 }
