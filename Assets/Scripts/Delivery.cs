@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-public class Collision : MonoBehaviour
+public class Delivery : MonoBehaviour
 {
     private bool _hasPackage;
     

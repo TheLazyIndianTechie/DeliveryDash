@@ -10112,9 +10112,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 311394558}
-  - component: {fileID: 311394556}
   - component: {fileID: 311394559}
   - component: {fileID: 311394560}
+  - component: {fileID: 311394556}
   - component: {fileID: 311394561}
   m_Layer: 0
   m_Name: Foodie Bugonna
@@ -29914,6 +29914,63 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1001 &1065433378
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 341313695575459126, guid: 9dd94558d816541fab5ea3c6c8e5a281, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18.411886
+      objectReference: {fileID: 0}
+    - target: {fileID: 341313695575459126, guid: 9dd94558d816541fab5ea3c6c8e5a281, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.7807074
+      objectReference: {fileID: 0}
+    - target: {fileID: 341313695575459126, guid: 9dd94558d816541fab5ea3c6c8e5a281, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341313695575459126, guid: 9dd94558d816541fab5ea3c6c8e5a281, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 341313695575459126, guid: 9dd94558d816541fab5ea3c6c8e5a281, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341313695575459126, guid: 9dd94558d816541fab5ea3c6c8e5a281, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341313695575459126, guid: 9dd94558d816541fab5ea3c6c8e5a281, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341313695575459126, guid: 9dd94558d816541fab5ea3c6c8e5a281, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341313695575459126, guid: 9dd94558d816541fab5ea3c6c8e5a281, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341313695575459126, guid: 9dd94558d816541fab5ea3c6c8e5a281, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4530936580582661320, guid: 9dd94558d816541fab5ea3c6c8e5a281, type: 3}
+      propertyPath: m_Name
+      value: Package_02
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9dd94558d816541fab5ea3c6c8e5a281, type: 3}
 --- !u!1 &1072338685
 GameObject:
   m_ObjectHideFlags: 0
@@ -43197,7 +43254,7 @@ GameObject:
   - component: {fileID: 1520608762}
   - component: {fileID: 1520608761}
   m_Layer: 0
-  m_Name: monster_0
+  m_Name: Customer
   m_TagString: Customer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60913,7 +60970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4530936580582661320, guid: 9dd94558d816541fab5ea3c6c8e5a281, type: 3}
       propertyPath: m_Name
-      value: Package
+      value: Package_01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -60930,5 +60987,6 @@ SceneRoots:
   - {fileID: 311394558}
   - {fileID: 1276871778}
   - {fileID: 668802650}
-  - {fileID: 2380580648904889864}
   - {fileID: 1520608760}
+  - {fileID: 2380580648904889864}
+  - {fileID: 1065433378}
