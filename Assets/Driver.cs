@@ -14,26 +14,26 @@ public class Driver : MonoBehaviour
 
         if (Keyboard.current.upArrowKey.isPressed|| Keyboard.current.wKey.isPressed)
         {
-            Debug.Log("We are pushing forward");
+            // Debug.Log("We are pushing forward");
             move = 1.0f;
         }
         
         else if (Keyboard.current.downArrowKey.isPressed|| Keyboard.current.sKey.isPressed)
         {
-            Debug.Log("We are pushing backwards");
+            // Debug.Log("We are pushing backwards");
             move = -1.0f;
         }
 
         if (Keyboard.current.leftArrowKey.isPressed|| Keyboard.current.aKey.isPressed)
         {
-            Debug.Log("We are pushing left");
+            // Debug.Log("We are pushing left");
             steer = 1.0f;
 
         }
 
         else if (Keyboard.current.rightArrowKey.isPressed|| Keyboard.current.dKey.isPressed)
         {
-            Debug.Log("We are pushing right");
+            // Debug.Log("We are pushing right");
             steer = -1.0f;
         }
 
