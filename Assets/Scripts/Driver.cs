@@ -1,3 +1,5 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,7 +10,15 @@ public class Driver : MonoBehaviour
     [SerializeField] private float regularSpeed = 5f;
     [SerializeField] private float boostSpeed = 10f;
     private bool _isBoosted;
-    
+
+    [SerializeField] private TMP_Text boostText;
+
+
+    private void Start()
+    {
+        // Ensure boost text is disabled on start
+        boostText.gameObject.SetActive(false);
+    }
 
 
     public void Update()
@@ -54,6 +64,7 @@ public class Driver : MonoBehaviour
         {
             currentSpeed = boostSpeed;
             _isBoosted = true;
+            boostText.gameObject.SetActive(true);
             Destroy(other.gameObject);
         }
     }
@@ -63,6 +74,7 @@ public class Driver : MonoBehaviour
         if (_isBoosted)
         {
             currentSpeed = regularSpeed;
+            boostText.gameObject.SetActive(false);
             _isBoosted = false;
         }
     }

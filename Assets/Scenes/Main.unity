@@ -10249,6 +10249,7 @@ MonoBehaviour:
   steerSpeed: 200
   regularSpeed: 5
   boostSpeed: 10
+  boostText: {fileID: 1516074026}
 --- !u!4 &311394558
 Transform:
   m_ObjectHideFlags: 0
